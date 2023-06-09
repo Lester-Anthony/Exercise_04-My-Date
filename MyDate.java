@@ -17,6 +17,12 @@ public class MyDate {
         this.day = day;
     }
 
+    public MyDate(int year, String month, int day) {
+        this.year = year;
+        this.setMonth(month);
+        this.day = day;
+    }
+
 
     public boolean isBefore(MyDate date) {
         if (this.year < date.getYear())
@@ -48,36 +54,40 @@ public class MyDate {
     }
 
     public void setMonth(String month) {
-        switch (month.toLowerCase()) {
-            case "january":
-                this.month = 1;
-            case "february":
-                this.month = 2;
-            case "march":
-                this.month = 3;
-            case "april":
-                this.month = 4;
-            case "may":
-                this.month = 5;
-            case "june":
-                this.month = 6;
-            case "july":
-                this.month = 7;
-            case "august":
-                this.month = 8;
-            case "september":
-                this.month = 9;
-            case "october":
-                this.month = 10;
-            case "november":
-                this.month = 11;
-            case "december":
-                this.month = 12;
-            default:
-                System.out.println("ERROR: Invalid Month");
-        }
+        this.month = parseMonth(month);
     }
 
+    public int parseMonth(String month) {
+        switch (month.toLowerCase()) {
+            case "january":
+                return 1;
+            case "february":
+                return 2;
+            case "march":
+                return 3;
+            case "april":
+                return 4;
+            case "may":
+                return 5;
+            case "june":
+                return 6;
+            case "july":
+                return 7;
+            case "august":
+                return 8;
+            case "september":
+                return 9;
+            case "october":
+                return 10;
+            case "november":
+                return 11;
+            case "december":
+                return 12;
+            default:
+                System.out.println("ERROR: Invalid Month");
+                return 0;
+        }
+    }
 
     public int getYear() {
         return year;

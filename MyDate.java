@@ -4,9 +4,13 @@ public class MyDate {
     private int year;
 
     public MyDate() {
+        this.year = 1990;
+        this.month = 1;
+        this.day = 1;
     }
 
     public MyDate(int month, int day) {
+        this.year = 2022;
         this.month = month;
         this.day = day;
     }
